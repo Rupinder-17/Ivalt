@@ -6,19 +6,21 @@ import GridPattern from "./ui/grid-pattern";
 
 export function Index() {
   return (
-    <div className="relative flex size-full items-center justify-center overflow-hidden rounded-lg border bg-background p-20 md:shadow-xl">
-      <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
-        Grid Pattern
-      </p>
+    <div className="relative w-screen h-screen overflow-hidden bg-background">
       <GridPattern
-        width={20}
-        height={20}
-        x={-1}
-        y={-1}
+        width={50} // Adjust these values for better grid coverage
+        height={50}
+        x={0} // Starting point of the grid
+        y={0}
         className={cn(
-          "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] "
+          "absolute inset-0 [mask-image:none] fill-current text-gray-300 dark:text-gray-700"
         )}
       />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
+          Grid Pattern
+        </p>
+      </div>
     </div>
   );
 }

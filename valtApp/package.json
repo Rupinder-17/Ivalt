@@ -12,6 +12,7 @@
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.13.5",
     "intl-tel-input": "^25.2.0",
     "ivalt-react": "^1.2.9",
     "lucide-react": "^0.468.0",

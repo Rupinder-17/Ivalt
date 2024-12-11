@@ -11,6 +11,7 @@ export const Form = () => {
   });
 
   const [phone, setPhone] = useState("");
+    const [showMap, setShowMap] = useState(false);
   const handleSucces = (userData) => {
     console.log("Authentication successful!", userData);
   };
@@ -25,7 +26,8 @@ export const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    startAuth(phone); // Initiate authentication with the phone number.
+    startAuth(phone); 
+    setShowMap(true)
   };
 
   return (
@@ -51,8 +53,6 @@ export const Form = () => {
             inputClassName="form-control"
             onChange={(e) =>{
               console.log("input", e);
-              
-
             }}
           /> */}
           <button
@@ -60,7 +60,7 @@ export const Form = () => {
             disabled={isPoling || !phone}
             className={`p-2 rounded ${
               isPoling || !phone
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                ? "bg-gray-300 text-red-500 cursor-not-allowed"
                 : "bg-blue-500 text-white hover:bg-blue-600"
             }`}
           >
@@ -80,15 +80,17 @@ export const Form = () => {
               <p className="text-sm text-gray-600">Email: {userData.email}</p>
             </div>
           )}
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217408.96322259825!2d74.70531005971218!3d31.633438299616138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391964aa569e7355%3A0xeea2605bee84ef7d!2sAmritsar%2C%20Punjab!5e0!3m2!1sen!2sin!4v1733885112262!5m2!1sen!2sin"
-            width={600}
-            height={450}
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+          {showMap && (
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217408.96322259825!2d74.70531005971218!3d31.633438299616138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391964aa569e7355%3A0xeea2605bee84ef7d!2sAmritsar%2C%20Punjab!5e0!3m2!1sen!2sin!4v1733885112262!5m2!1sen!2sin"
+              width={600}
+              height={450}
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          )}
         </form>
       </div>
     </div>

@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 // import GridPattern from "@/components/magicui/grid-pattern";
 import GridPattern from "./ui/grid-pattern";
 import HyperText from "./ui/hyper-text";
+import { Form } from "./Form";
 
 export function Index() {
   return (
@@ -15,6 +16,7 @@ export function Index() {
               text="FIVE DIMENSIONS OF IDENTITY IN 1-CLICK"
             />
           </p>
+          <Form/>
         </div>
         <GridPattern
           width={50}
